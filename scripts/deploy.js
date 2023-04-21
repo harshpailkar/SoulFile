@@ -6,17 +6,17 @@ const tokens = (n) => {
 
 async function main() {
   const [deployer] = await ethers.getSigners()
-  const NAME = "SoulFile"
-  const SYMBOL = "SFL"
 
   const SoulFile = await ethers.getContractFactory("SoulFile")
-  const soulfile = await SoulFile.deploy(NAME, SYMBOL)
-  await soulfile.deplyed()
+  const soulfile = await SoulFile.deploy()
+  await soulfile.deployed()
 
-  console.log("Deployed Dappcord Contract at: " + soulfile.address)
+  console.log("Deployed SoulFile Contract at: " + soulfile.address)
 }
 
 main().catch((error) => {
   console.error(error);
   process.exitCode = 1;
 });
+
+module.exports = soulfile;

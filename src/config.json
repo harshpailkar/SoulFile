@@ -1,7 +1,13 @@
 {
     "31337": {
-        "Dappcord": {
+        "SoulFile": {
             "address": "0x5FbDB2315678afecb367f032d93F642f64180aa3"
+        }
+    },
+
+    "80001": {
+        "SoulFile": {
+            "address": "0x4a6A9Fd4B1B49F5f98685dE06C7B1CcAFf26Dc1F"
         }
     }
 }

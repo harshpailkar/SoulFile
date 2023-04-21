@@ -1,13 +1,18 @@
 import { useEffect, useState } from 'react'
-const Channels = ({ provider, account, dappcord, channels, currentChannel, setCurrentChannel }) => {
+const Channels = ({ provider, account, soulfile }) => {
 
   const [image, setImage] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [isUploaded, setIsUploaded] = useState(false);
-  
-  const handleSubmit = (e) => {
+
+ 
+async function handleSubmit(e) {
     e.preventDefault();
     setIsLoading(true);
+    const signer = await provider.getSigner()
+    const transaction = await soulfile.connect(signer).safeMint(account, "QmcKWqayEfVL6KujBRLZpgPs9vDemPFr3UhvB86NX9Ni3G")
+    await transaction.wait()
+
     setTimeout(() => {
       // handle the form submission here
       console.log(image);
